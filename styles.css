@@ -99,41 +99,6 @@ button:hover {
     text-decoration: none;
 }
 
-.left-ad, .right-ad {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
-.left-ad {
-    left: 0;
-}
-
-.right-ad {
-    right: 0;
-}
-
-/* Ad containers */
-.ad-container {
-    position: fixed;
-    z-index: 1000;
-    background-color: #fff; /* Optional: adds a background color to ensure ads are visible */
-    padding: 10px; /* Optional: adds padding around the ad */
-}
-
-/* Position ads at the top and bottom */
-.top-ad {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.bottom-ad {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 /* Hide ads on mobile */
 @media only screen and (max-width: 768px) {
@@ -157,13 +122,6 @@ button:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-    .container {
-        width: 90%;
-        padding: 15px;
-    }
-    .top-ad, .bottom-ad {
-        display: none;
-    }
 
     .title, fieldset, legend, label, input, select, button, #result {
         font-size: 14px; /* Adjust font size for smaller screens */
