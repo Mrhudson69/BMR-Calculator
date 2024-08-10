@@ -1,0 +1,92 @@
+body {
+    font-family: 'Edu VIC WA NT Beginner', sans-serif;
+    background-color: #000; /* Black background for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background: url('exercise.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with less opacity */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards, slideIn 1s forwards;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* White text */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff; /* White neon glow effect */
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff; /* White text */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff; /* White neon glow effect */
+}
+
+label, input, select, button {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: 'Edu VIC WA NT Beginner', sans-serif;
+    color: #fff; /* White text */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent black background for inputs */
+    text-shadow: 0 0 5px #fff; /* White neon glow effect */
+}
+
+button {
+    background-color: #31313196; /* Keep the button background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 0 5px #fff; /* White neon glow effect */
+}
+
+button:hover {
+    background-color: #020102; /* Keep the button hover color */
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    color: #fff; /* White text */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff; /* White neon glow effect */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+    }
+}
