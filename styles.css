@@ -16,7 +16,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 90%;
+    max-width: 350px;
     opacity: 0;
     transform: translateY(-50px);
     animation: fadeIn 1s forwards, slideIn 1s forwards;
@@ -45,7 +46,7 @@ legend {
 
 label, input, select, button {
     display: block;
-    width: 90%;
+    width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 4px;
@@ -87,6 +88,9 @@ button:hover {
     color: #fff; /* White text */
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; /* White neon glow effect */
     font-size: 14px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
 }
 
 .watermark a {
@@ -94,7 +98,6 @@ button:hover {
     text-shadow: 0 0 5px #fff; /* White neon glow effect */
     text-decoration: none;
 }
-
 
 @keyframes fadeIn {
     to {
@@ -105,5 +108,21 @@ button:hover {
 @keyframes slideIn {
     to {
         transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .title, fieldset, legend, label, input, select, button, #result {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .watermark {
+        font-size: 12px; /* Adjust font size for watermark on smaller screens */
     }
 }
