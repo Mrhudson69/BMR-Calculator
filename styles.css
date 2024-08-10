@@ -123,6 +123,6 @@ button:hover {
     }
 
     .watermark {
-        font-size: 12px; /* Adjust font size for watermark on smaller screens */
+        font-size: 10px; /* Adjust font size for watermark on smaller screens */
     }
 }
