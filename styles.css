@@ -114,6 +114,27 @@ button:hover {
     right: 0;
 }
 
+/* Ad containers */
+.ad-container {
+    position: fixed;
+    z-index: 1000;
+    background-color: #fff; /* Optional: adds a background color to ensure ads are visible */
+    padding: 10px; /* Optional: adds padding around the ad */
+}
+
+/* Position ads at the top and bottom */
+.top-ad {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-ad {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* Hide ads on mobile */
 @media only screen and (max-width: 768px) {
     .left-ad, .right-ad {
@@ -139,6 +160,9 @@ button:hover {
     .container {
         width: 90%;
         padding: 15px;
+    }
+    .top-ad, .bottom-ad {
+        display: none;
     }
 
     .title, fieldset, legend, label, input, select, button, #result {
