@@ -99,6 +99,29 @@ button:hover {
     text-decoration: none;
 }
 
+.left-ad, .right-ad {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.left-ad {
+    left: 0;
+}
+
+.right-ad {
+    right: 0;
+}
+
+/* Hide ads on mobile */
+@media only screen and (max-width: 768px) {
+    .left-ad, .right-ad {
+        display: none;
+    }
+}
+
+
 @keyframes fadeIn {
     to {
         opacity: 1;
