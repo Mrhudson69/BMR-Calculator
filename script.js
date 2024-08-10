@@ -3,7 +3,7 @@ document.getElementById('bmr-form').addEventListener('submit', function(e) {
 
     const weightValue = parseFloat(document.getElementById('weight-value').value);
     const weightUnit = document.getElementById('weight-unit').value;
-    const heightValue = parseFloat(document.getElementById('height-value').value);
+    const heightValue = document.getElementById('height-value').value; // Keep as string for processing
     const heightUnit = document.getElementById('height-unit').value;
     const age = parseInt(document.getElementById('age').value);
     const activityLevel = parseFloat(document.getElementById('activity-level').value);
@@ -14,11 +14,12 @@ document.getElementById('bmr-form').addEventListener('submit', function(e) {
     // Convert height to centimeters if needed
     let heightInCm;
     if (heightUnit === 'cm') {
-        heightInCm = heightValue;
+        heightInCm = parseFloat(heightValue);
     } else if (heightUnit === 'ft') {
-        heightInCm = heightValue * 30.48;
+        const [feet, inches] = heightValue.split('.').map(parseFloat);
+        heightInCm = (feet * 30.48) + (inches * 2.54);
     } else { // heightUnit === 'in'
-        heightInCm = heightValue * 2.54;
+        heightInCm = parseFloat(heightValue) * 2.54;
     }
 
     // BMR calculation using the Mifflin-St Jeor Equation
