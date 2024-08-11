@@ -81,7 +81,6 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     color: #fff; /* White text */
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; /* White neon glow effect */
     font-size: 14px;
     text-align: center;
     width: 100%;
@@ -90,7 +89,6 @@ button:hover {
 
 .watermark a {
     color: #fff; /* White text */
-    text-shadow: 0 0 5px #fff; /* White neon glow effect */
     text-decoration: none;
 }
 
