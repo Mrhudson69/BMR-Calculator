@@ -3,10 +3,22 @@ document.getElementById('bmr-form').addEventListener('submit', function(e) {
 
     const weightValue = parseFloat(document.getElementById('weight-value').value);
     const weightUnit = document.getElementById('weight-unit').value;
-    const heightValue = parseFloat(document.getElementById('height-value').value);
+    let heightValue = document.getElementById('height-value').value;
     const heightUnit = document.getElementById('height-unit').value;
     const age = parseInt(document.getElementById('age').value);
     const activityLevel = parseFloat(document.getElementById('activity-level').value);
+
+    // Log inputs to check if they are valid
+    console.log('Weight:', weightValue, 'Unit:', weightUnit);
+    console.log('Height:', heightValue, 'Unit:', heightUnit);
+    console.log('Age:', age);
+    console.log('Activity Level:', activityLevel);
+
+    // Check if any input is NaN or invalid
+    if (isNaN(weightValue) || isNaN(parseFloat(heightValue)) || isNaN(age) || isNaN(activityLevel)) {
+        alert('Please enter valid numeric values for all inputs.');
+        return;
+    }
 
     // Convert weight to kilograms if needed
     let weightInKg = weightUnit === 'kg' ? weightValue : weightValue * 0.453592;
@@ -14,11 +26,17 @@ document.getElementById('bmr-form').addEventListener('submit', function(e) {
     // Convert height to centimeters if needed
     let heightInCm;
     if (heightUnit === 'cm') {
-        heightInCm = heightValue;
+        heightInCm = parseFloat(heightValue);
     } else if (heightUnit === 'ft') {
-        heightInCm = heightValue * 30.48;
+        // Split the height by the decimal point to separate feet and inches
+        let [feet, inches] = heightValue.split('.');
+        feet = parseFloat(feet) || 0;
+        inches = parseFloat(inches) || 0;
+
+        // Convert the feet to centimeters and inches to centimeters
+        heightInCm = (feet * 30.48) + (inches * 2.54);
     } else { // heightUnit === 'in'
-        heightInCm = heightValue * 2.54;
+        heightInCm = parseFloat(heightValue) * 2.54;
     }
 
     // BMR calculation using the Mifflin-St Jeor Equation
